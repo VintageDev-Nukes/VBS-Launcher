@@ -1,0 +1,51 @@
+<html>
+<HEAD>
+<TITLE>FONDO</TITLE>
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="js/crawler.js"></script>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<script src="js/jquery.fittext.js"></script>
+<style type="text/css"> 
+body {
+width:100%;
+height:100%;
+margin:0px;
+font-family:arial;
+font-size:12px;
+}
+.bg {
+	/* Set rules to fill background */
+
+	/* Set up proportionate scaling */
+	width: 100%;
+	height: 100%;
+	
+	/* Set up positioning */
+	position: absolute;
+	top: 45;
+	left: 0;
+}
+
+.bg img {
+margin:-35px;
+filter:progid:DXImageTransform.Microsoft.Blur(PixelRadius='35', MakeShadow='false', ShadowOpacity='0')
+}
+</style>
+
+<!-- Propiedades del Launcher (HTA) -->
+
+<HTA:APPLICATION
+	ID="HTA" 
+	APPLICATIONNAME="HTA" 
+	BORDER="none"
+	BORDER STYLE="raised"
+	CAPTION="yes"
+	SCROLL="no"
+	SELECTION="no">
+</HEAD>
+<body>
+<div class="marquee" id="mycrawler2">
+<img src="http://i.imgur.com/pgEKY.png" style="height:340px;" />
+</div>
+</body>
+</html>

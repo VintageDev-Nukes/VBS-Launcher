@@ -1,0 +1,704 @@
+<html>
+<HEAD>
+<TITLE>LAUNCHER</TITLE>
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+<script type="text/javascript" src="js/crawler.js"></script>
+<script type="text/javascript">
+function show(myID) {
+document.getElementById(myID).style.display = "block";
+}
+function hide(myID) {
+document.getElementById(myID).style.display = "none";
+}
+</script>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<script src="js/jquery.fittext.js"></script>
+<style type="text/css"> 
+.panel
+{
+position:absolute;
+width:510px;
+height:340px;
+top:45px;
+left:0px;
+text-align:center;
+background: #fff url('images/fondo.png') repeat; 
+}
+.subp {
+width:382px;
+height:340px;
+position:absolute;
+left:260px;
+margin-left:-191px;
+top:0;
+background-color:#e5eecc;
+border:solid 1px #c3c3c3;
+}
+#wbo {
+position:absolute;
+width:510px;
+height:430px;
+left:0;
+top:0;
+background: #000;
+display:none;
+}
+#credit {
+position:absolute;
+width:510px;
+height:430px;
+left:0;
+top:0;
+background: #000;
+display:none;
+}
+#serie {
+position:absolute;
+width:510px;
+height:430px;
+left:0;
+top:0;
+background: #000;
+display:none;
+}
+
+body {
+width:100%;
+height:100%;
+margin:0px;
+font-family:arial;
+font-size:12px;
+}
+#table {
+text-align:center;
+position:absolute;
+bottom:7px;
+left:0px;
+}
+#td {
+width:170px;
+}
+.bg {
+	/* Set rules to fill background */
+
+	/* Set up proportionate scaling */
+	width: 510px;
+	height: 340px;
+	
+	/* Set up positioning */
+	position: absolute;
+	top: 45;
+	left: 0;
+}
+
+.bg img {
+margin:-35px;
+filter:progid:DXImageTransform.Microsoft.Blur(PixelRadius='35', MakeShadow='false', ShadowOpacity='0')
+}
+
+.logo {
+position:absolute;
+width:410px;
+height:75px;
+top:55px;
+left:260px;
+margin-left:-205px;
+}
+.logo2 {
+position:absolute;
+top:135px;
+left:260px;
+width:180px;
+height:32px;
+margin-left:-90px;
+}
+.login {
+width:350px;
+height:70px;
+background: #808080;
+position:absolute;
+left:260px;
+margin-left:-175px;
+top:174px;
+border: 5px #000 solid;
+}
+.wbg {
+width:510px;
+height:45px;
+position:absolute;
+top:0px;
+left:0px;
+background: url('images/wbg.png') repeat;
+}
+@font-face {
+    font-family: 'xeronregular';
+    src: url('fonts/xeron.eot');
+    src: url('fonts/xeron.eot?#iefix') format('embedded-opentype'),
+         url('fonts/xeron.woff') format('woff'),
+         url('fonts/xeron.ttf') format('truetype'),
+         url('fonts/xeron.svg#xeronregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'minecraftregular';
+    src: url('fonts/minecraft-webfont.eot');
+    src: url('fonts/minecraft-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/minecraft-webfont.woff') format('woff'),
+         url('fonts/minecraft-webfont.ttf') format('truetype'),
+         url('fonts/minecraft-webfont.svg#minecraftregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+.back {
+width:510px;
+height:45px;
+background:#000;
+position:absolute;
+bottom:0px;
+left:0px;
+}
+#byr {
+width:125px;
+height:25px;
+}
+#cerrar {
+width:16px;
+height:16px;
+top:15px;
+right:16px;
+position:absolute;
+}
+.ser13 {
+position:absolute;
+left: 260px;
+margin-left:-90px;
+bottom:55px;
+}
+#wbod {
+width:100%;
+height:100%;
+}
+#back {
+position:relative;
+top:5px;
+}
+#progress {
+ width: 400px;   
+ border: 1px solid black;
+ padding: 3px;
+ background:#fff;
+ position:absolute;
+ bottom:85px;
+ left:260px;
+ margin-left:-200px;
+}
+
+#percent {
+ top:2px;
+ position: absolute;   
+ left: 50%;
+ margin-left:-38px;
+ width:100%;
+}
+
+#bar {
+ height: 20px;
+ background-color: green;
+ width: 60%;
+ position:relative;
+ left:-79px;
+}
+#info6 {
+position:absolute;
+top:295px;
+left:260px;
+margin-left:-84px;
+color:#fff;
+font-weight:bold;
+font-size:15px;
+}
+ a:link {
+	text-decoration: none;
+	color: #0000ff;
+}
+a:visited {
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: none;
+	color: #333;
+}
+a:active {
+	text-decoration: none;
+}
+a img {border:0;}
+#random1 {display:none;}
+
+#button {
+	text-decoration: none;
+	color: #000;
+	font-family: xeronregular;
+	font-size:14px;
+	width:125px;
+	height:25px;
+	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(
+	src='images/button0.png',
+	sizingMethod='scale');
+	line-height:25px;
+	text-align:center;
+}
+
+#table a {
+	display:block;
+	text-decoration: none;
+	color: #000;
+	font-family: xeronregular;
+	font-size:14px;
+	width:125px;
+	height:25px;
+	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(
+	src='images/button0.png',
+	sizingMethod='scale');
+	line-height:25px;
+	text-align:center;
+}
+
+#table a:link {
+	display:block;
+	text-decoration: none;
+	color: #000;
+	font-family: xeronregular;
+	font-size:14px;
+	width:125px;
+	height:25px;
+	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(
+	src='images/button0.png',
+	sizingMethod='scale');
+	line-height:25px;
+	text-align:center;
+}
+
+#table a:visited {
+	display:block;
+	text-decoration: none;
+	color: #000;
+	font-family: xeronregular;
+	font-size:14px;
+	width:125px;
+	height:25px;
+	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(
+	src='images/button0.png',
+	sizingMethod='scale');
+	line-height:25px;
+	text-align:center;
+}
+
+#table a:hover {
+	display:block;
+	text-decoration: none;
+	color: #000;
+	font-family: xeronregular;
+	font-size:14px;
+	width:125px;
+	height:25px;
+	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(
+	src='images/button1.png',
+	sizingMethod='scale');
+	line-height:25px;
+	text-align:center;
+}
+
+#table a:active {
+	display:block;
+	text-decoration: none;
+	color: #000;
+	font-family: xeronregular;
+	font-size:14px;
+	width:125px;
+	height:25px;
+	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(
+	src='images/button2.png',
+	sizingMethod='scale');
+	line-height:25px;
+	text-align:center;
+}
+
+#buttonsmall {
+	text-decoration: none;
+	color: #000;
+	font-family: xeronregular;
+	position:relative;
+	top:350px;
+	left:0px;
+	font-size:12px;
+	width:181px;
+	height:20px;
+	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(
+	src='images/button0small.png',
+	sizingMethod='scale');
+	line-height:20px;
+	text-align:center;
+}
+
+#buttonsmall a {
+	text-decoration: none;
+	color: #000;
+	font-family: xeronregular;
+	font-size:12px;
+	width:181px;
+	height:20px;
+	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(
+	src='images/button0small.png',
+	sizingMethod='scale');
+	line-height:20px;
+	text-align:center;
+}
+
+#buttonsmall a:link {
+	text-decoration: none;
+	color: #000;
+	font-family: xeronregular;
+	font-size:12px;
+	width:181px;
+	height:20px;
+	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(
+	src='images/button0small.png',
+	sizingMethod='scale');
+	line-height:20px;
+	text-align:center;
+}
+
+#buttonsmall a:visited {
+	text-decoration: none;
+	color: #000;
+	font-family: xeronregular;
+	font-size:12px;
+	width:181px;
+	height:20px;
+	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(
+	src='images/button0small.png',
+	sizingMethod='scale');
+	line-height:20px;
+	text-align:center;
+}
+
+#buttonsmall a:hover {
+	text-decoration: none;
+	color: #000;
+	font-family: xeronregular;
+	font-size:12px;
+	width:181px;
+	height:20px;
+	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(
+	src='images/button1small.png',
+	sizingMethod='scale');
+	line-height:20px;
+	text-align:center;
+}
+
+#buttonsmall a:active {
+	text-decoration: none;
+	color: #000;
+	font-family: xeronregular;
+	font-size:12px;
+	width:181px;
+	height:20px;
+	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(
+	src='images/button2small.png',
+	sizingMethod='scale');
+	line-height:20px;
+	text-align:center;
+}
+
+
+#back {
+	text-decoration: none;
+	color: #fff;
+	font-family: xeronregular;
+	position:relative;
+	top:-20px;
+	left:0px;
+	font-size:14px;
+}
+
+#splash {
+color:#fff; 
+position:absolute; 
+left:0;
+top:130px; 
+width:510px;
+text-align:center;
+font-family: minecraftregular;
+font-weight:bold;
+filter: progid: dropshadow(color=#393B0B,offX=2,offY=2), dropshadow(color=#000000,offX=1,offY=1), kDXImageTransform.Microsoft.Matrix(M11=0.93969262, M12=0.34202014, M21=-0.34202014, M22=0.93969262,sizingMethod='auto expand');
+display: block;
+}
+header {
+width: 100%;
+margin:0px auto;
+max-width:510px;
+}
+</style>
+
+<!-- Propiedades del Launcher (HTA) -->
+
+<HTA:APPLICATION
+	ID="HTA" 
+	APPLICATIONNAME="HTA" 
+	BORDER="none"
+	BORDER STYLE="raised"
+	CAPTION="yes"
+	SCROLL="no"
+	SELECTION="no">
+<body bgcolor="000000">
+</HEAD>
+<body>
+<center>
+
+<!-- Botones del menu -->
+
+<script language="VBScript">
+Function ejecutar()
+set objshell = createobject("wscript.shell")
+appdata = objshell.expandenvironmentstrings("%APPDATA%")
+objshell.run """" & appdata & "\Ikillnukes\RUN.bat" & """"
+End Function
+
+Function test()
+        strLine = document.getElementById("username").value
+        Set objFSO = CreateObject("Scripting.FileSystemObject")
+        Set objTextFile = objFSO.OpenTextFile("User.txt", 2, True)  
+        objTextFile.WriteLine(strLine)
+        objTextFile.Close
+    End Function
+
+Function runear()
+setTimeout "ejecutar()",1000
+End Function
+</script>
+
+<script language="VBScript">
+Dim TotalMemory ' Declaras la variable
+ 
+Public function GetTotalMemory
+	For Each instance In GetObject("winmgmts:").InstancesOf("Win32_ComputerSystem")
+		GetTotalMemory = CStr((Round(instance.TotalPhysicalMemory / 1048576, 0)))
+		Exit For
+	Next
+End function
+ 
+TotalMemory = GetTotalMemory ' Llamas a la función para que devuelva el valor (Convertido a string)
+</script>
+
+<!-- Cerrar ventana -->
+
+<script type="text/javascript">
+function salir() {
+setTimeout('window.close()',1250)
+}
+function salir2() {
+setTimeout('window.close()',200)
+}
+function mostrar1() {
+setTimeout('show("wbo")',200)
+}
+function ocultar1() {
+setTimeout('hide("wbo")',200)
+}
+function mostrar2() {
+setTimeout('show("credit")',200)
+}
+function ocultar2() {
+setTimeout('hide("credit")',200)
+}
+function mostrar3() {
+setTimeout('show("serie")',200)
+}
+function ocultar3() {
+setTimeout('hide("serie")',200)
+}
+function mostrar4() {
+setTimeout('show("random1")',200)
+}
+function ocultar4() {
+setTimeout('hide("random1")',200)
+}
+</script>
+
+<!-- Centrar ventana y leer User -->
+
+ <script language="VBScript">
+       Sub Window_Onload
+           strComputer = "."
+           Set objWMIService = GetObject("winmgmts:\\" & strComputer & "\root\cimv2")
+           Set colItems = objWMIService.ExecQuery("Select * From Win32_DesktopMonitor")
+           For Each objItem in colItems
+               intHorizontal = objItem.ScreenWidth
+               intVertical = objItem.ScreenHeight
+           Next
+           intLeft = (intHorizontal - 510) / 2
+           intTop = (intVertical - 430) / 2
+           window.resizeTo 510,430
+           window.moveTo intLeft, intTop
+ 
+            set objFileToRead = CreateObject("Scripting.FileSystemObject").OpenTextFile("User.txt",1)
+            strLine = objFileToRead.ReadLine()
+            objFileToRead.Close
+ 
+            document.getElementById("username").value = strLine
+       End Sub
+    </script>
+
+<!-- Creditos script -->
+
+ <script type="text/javascript">
+  function link1() {
+      var shell = new ActiveXObject("WScript.Shell");
+      shell.run("http://www.twitter.com/Ikillnukes98");
+  }
+  function link2() {
+      var shell = new ActiveXObject("WScript.Shell");
+      shell.run("http://www.youtube.com/ikillnukes4evertmb");
+  }
+  function link3() {
+      var shell = new ActiveXObject("WScript.Shell");
+      shell.run("http://foro.elhacker.net/profiles/seazoux-u419740.html");
+  }
+  function link4() {
+      var shell = new ActiveXObject("WScript.Shell");
+      shell.run("http://foro.elhacker.net/profiles/elektrohcker-u436313.html");
+  }
+  function link5() {	
+      var shell = new ActiveXObject("WScript.Shell");
+      shell.run("http://foro.elhacker.net/profiles/elektrohcker-u436313.html");
+  }
+  function link6() {
+      var shell = new ActiveXObject("WScript.Shell");
+      shell.run("https://twitter.com/J23Youtube");
+  }
+  function link7() {
+      var shell = new ActiveXObject("WScript.Shell");
+      shell.run("http://www.youtube.com/jugadora23");
+  }
+  </script>
+<div id="wbod">
+<div class="wbg">
+<h2 style="color:#fff; font-family: 'xeronregular'; position:absolute; top:3px; left:16px; width:510px; margin-left:-260px; left:260px;"><b>HugeCraft</b><b style="font-family: 'arial';">&#8482;</b><b> - Login</b></h2>
+<a href="#" onlick="javascript:salir();">
+<img src="images/cerrar0.png" onmouseover="this.src='images/cerrar1.png';" onmouseout="this.src='images/cerrar0.png';" onClick="this.src='images/cerrar2.png';" name="btnCerrar" id="cerrar" /></a>
+</div>
+<div class="bg">
+
+<div class="marquee" id="mycrawler2">
+<img src="http://i.imgur.com/pgEKY.png" style="height:340px;" />
+</div>
+
+<script type="text/javascript">
+marqueeInit({
+	uniqueid: 'mycrawler2',
+	style: {
+		'padding': '0px',
+		'width': '4096px',
+		'height': '340px'
+	},
+	inc: 1, //speed - pixel increment for each iteration of this marquee's movement
+	mouse: false, //mouseover behavior ('pause' 'cursor driven' or false)
+	moveatleast: 1,
+	neutral: 150,
+	savedirection: true,
+	random: false
+});
+</script>
+
+</div>
+<img src="images\image2.png" class="logo" />
+<script type="text/javascript">
+	$("#splash").fitText(1.2, { minFontSize: '50px', maxFontSize: '75px' });
+</script>
+<header>
+<div id="splash">Work in Progress!</div>
+</header>
+<div class="login">
+<center><br>Usuario: <input type="text" id="username" style="width:200px; position:relative; top:2px;" /></center>
+</div>
+
+<span id="info6">Progreso del Launcher:</span>
+
+<div id="progress">
+    <div id="bar"><span id="percent"><b>60%</b></span></div>
+</div>
+
+<span id="buttonsmall"><a href="#" onlick="javascript:mostrar3()">+ Opciones...</a></span>
+<div class="back">
+<table id="table">
+<tr><td id="td">
+<a href="#" id="button" onlick="mostrar1();">Opciones</a>
+</td><td id="td">
+<a href="#" id="button" onClick="runear()+test()+salir()">Jugar</a>
+</td><td id="td">
+<a href="#" id="button" onlick="javascript:mostrar2()">Cr&eacute;ditos</a>
+</td></tr></table>
+
+</div>
+<div id="wbo">
+<div class="wbg">
+<h2 style="color:#fff; font-family: 'xeronregular'; position:absolute; top:3px; left:16px; width:510px; margin-left:-260px; left:260px;"><b>HugeCraft</b><b style="font-family: 'arial';">&#8482;</b><b> - Opciones</b></h2>
+</div>
+<div class="panel"><div class="subp"><h2>Men&uacute; de opciones:</h2><h3>Configuraci&oacute;n de memoria:</h3>La memoria de la que usted dispone es: <b><script language="VBScript">document.write(TotalMemory & " MB")</script> aproximadamente</b>, aqu&iacute; puedes administrar<br>la memoria para que no tengas errores tipo <b>OutOfMemory</b><br>o se te pete la PC.<h4>Administra aqu&iacute; la memoria que ir&aacute;s a usar</h4><h3>Cosas a implementar:</h3><b>+ Themes<br>+ Idiomas</b></div></div>
+<div class="back">
+<a href="#" onlick="ocultar1()">
+<img src="images/back0.png" onmouseover="this.src='images/back1.png';" onmouseout="this.src='images/back0.png';" onClick="this.src='images/back2.png';" name="btnCreditos" /><span id="back">Volver hacia atr&aacute;s</span></a>
+</div>
+</div>
+
+<div id="credit">
+<div class="wbg">
+<h2 style="color:#fff; font-family: 'xeronregular'; position:absolute; top:3px; left:16px; width:510px; margin-left:-260px; left:260px;"><b>HugeCraft</b><b style="font-family: 'arial';">&#8482;</b><b> - Creditos</b></h2>
+</div>
+<div class="panel"><div class="subp">
+<!-- Creditos -->
+<marquee id="comments_scroll_container" direction="up" scrollamount="2" scrolldelay="1" width="382" height="340" style="text-align:center;"><span onmouseover="document.getElementById('comments_scroll_container').stop();" onmouseout="document.getElementById('comments_scroll_container').start();">
+<h1>Cr&eacute;ditos</h1><br><br><h3>Creador:</h3><br>&#187; <b style="font-size:15px;">Ikillnukes</b> (<a href="#" title="Link #1" onclick="link1()">Twitter</a>) (<a href="#" title="Link #2" onclick="link2()">YouTube!</a>) (<a href="#" title="Link #3" onclick="link3()">Foro.elhacker.net</a>)<br><br><h2>Colaboradores:</h2><br><h3>Programaci&oacute;n:</h3><br>&#187; <b>Elektro H@cker</b> (<a href="#" title="Link #4" onclick="link4()">Perfil - Foro.elhacker.net</a>) <br><b style="color:#666;">Ayudar en Sintaxis y algunos c&oacute;digos</b><br>&#187; <b>NovLucker</b> (<a href="#" title="Link #5" onclick="link5()">Perfil - Foro.elhacker.net</a>) <br><b style="color:#666;">Ayudar con el Launcher (lo que es la base)</b><br><h2>Alpha-Testers:</h2><br>
+&#187; <b>Jugadora23</b> (<a href="#" title="Link #6" onclick="link6()">Twitter</a>) (<a href="#" title="Link #6" onclick="link6()">YouTube!</a>) (<a href="#" title="Link #7" onclick="mostrar4()">Cositos random :3</a>) <br>
+&#187; ErVSPanchi (<a href="#" title="Link #8" onclick="link7()">YouTube!</a>) <br>
+&#187; Ferminuno <span></marquee>
+
+</div></div>
+<div class="back">
+<a href="#" onlick="ocultar2()">
+<img src="images/back0.png" onmouseover="this.src='images/back1.png';" onmouseout="this.src='images/back0.png';" onClick="this.src='images/back2.png';" name="btnCreditos" /><span id="back">Volver hacia atr&aacute;s</span></a>
+</div>
+</div>
+
+<div id="serie">
+<div class="wbg">
+<h2 style="color:#fff; font-family: 'xeronregular'; position:absolute; top:3px; left:16px; width:510px; margin-left:-260px; left:260px;"><b>HugeCraft</b><b style="font-family: 'arial';">&#8482;</b><b> - Creditos</b></h2>
+</div>
+<div class="panel"><div class="subp">Hello world!</div></div>
+<div class="back">
+<a href="#" onlick="ocultar3()">
+<img src="images/back0.png" onmouseover="this.src='images/back1.png';" onmouseout="this.src='images/back0.png';" onClick="this.src='images/back2.png';" name="btnCreditos" /><span id="back">Volver hacia atr&aacute;s</span></a>
+</div>
+</div>
+
+<div id="random1">
+<div class="wbg">
+<h2 style="color:#fff; font-family: 'xeronregular'; position:absolute; top:3px; left:16px; width:510px; margin-left:-260px; left:260px;"><b>HugeCraft</b><b style="font-family: 'arial';">&#8482;</b><b> - Random</b></h2>
+</div>
+<div class="panel"><div class="subp" id="youtube" style="background:#666;"><iframe style="position:absolute; top:0px; left:0px;" width="382" height="340" src="http://www.youtube.com/embed/y9K18CGEeiI" frameborder="0" allowfullscreen></iframe></div>
+<div class="back" style="position:absolute; bottom:-45; left:0;">
+<a href="#" onlick="ocultar4()+ocultar2()">
+<img src="images/back0.png" onmouseover="this.src='images/back1.png';" onmouseout="this.src='images/back0.png';" onClick="this.src='images/back2.png';" name="btnCreditos" /><span id="back">Volver hacia atr&aacute;s</span></a>
+</div>
+</div>
+
+</div>
+ 
+</center>
+</body>
+</html>

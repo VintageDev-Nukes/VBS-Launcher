@@ -1,0 +1,99 @@
+<html>
+<HEAD>
+<link rel="stylesheet" href="css/styles.css" type="text/css" media="all" />
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+<script type="text/javascript" src="js/win7.js"></script>
+<script type="text/javascript" src="http://deadfrontier-esp.foroactivo.com/11229.js"></script>
+<TITLE>LAUNCHER</TITLE>
+<style type="text/css"> 
+a img {border:0;}
+.cerrar {position:absolute; top:0; left:431;}
+body {font-family:SegoeUI; font-size:12px; margin:0; position:absolute; top:0; left:0;}
+@font-face {
+    font-family: 'segoeui';
+    src: url('fonts/segoe-ui.eot');
+    src: url('fonts/segoe-ui.eot?#iefix') format('embedded-opentype'),
+         url('fonts/segoe-ui.woff') format('woff'),
+         url('fonts/segoe-ui.ttf') format('truetype'),
+         url('fonts/segoe-ui.svg#segoeui') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+</style>
+
+<!-- Cerrar ventana -->
+
+<script languaje="text/javascript">
+function salir() {
+setTimeout('window.close()',250)
+}
+function ver1() {document.write("0.2.4 Alpha");}
+</script>
+
+<!-- Propiedades del Launcher (HTA) -->
+
+<HTA:APPLICATION
+	ID="HTA" 
+	APPLICATIONNAME="HTA" 
+	BORDER="none"
+	BORDER STYLE="raised"
+	CAPTION="yes"
+	SCROLL="no"
+	SELECTION="no">
+<body bgcolor="ffffff">
+</HEAD>
+<body>
+<center>
+
+<!-- Botones del menu -->
+
+<script language="VBScript">
+Function ejecutar()
+set objshell = createobject("wscript.shell")
+appdata = objshell.expandenvironmentstrings("%APPDATA%")
+objshell.run appdata & "\Ikillnukes\RUN.hta"
+End Function
+
+Function upt()
+set objshell = createobject("wscript.shell")
+appdata = objshell.expandenvironmentstrings("%APPDATA%")
+objshell.run appdata & "\Ikillnukes\UPT.bat"
+End Function
+
+Function crear()
+Set objfso = createobject("scripting.filesystemobject")
+Set archivotexto = objfso.createtextfile("recovery.txt",true)	'creamos el archivo
+archivotexto.writeline "NO"	'escribimos una linea 
+End Function
+</script>
+
+<!-- Centrar ventana -->
+
+ <script language="VBScript">
+       Sub Window_Onload
+           strComputer = "."
+           Set objWMIService = GetObject("winmgmts:\\" & strComputer & "\root\cimv2")
+           Set colItems = objWMIService.ExecQuery("Select * From Win32_DesktopMonitor")
+           For Each objItem in colItems
+               intHorizontal = objItem.ScreenWidth
+               intVertical = objItem.ScreenHeight
+           Next
+           intLeft = (intHorizontal - 486) / 2
+           intTop = (intVertical - 264) / 2
+           window.resizeTo 487,264
+           window.moveTo intLeft, intTop
+       End Sub
+    </script>
+
+<img src="images/marco.png" style="position:absolute; top:0; left:0;" />
+<a href="#" onclick="javascript:salir();">
+<img src="images/cerrars1.png" onmouseover="javascript:this.src='images/cerrars2.png';" onmouseout="javascript:this.src='images/cerrars1.png';" onclick="javascript:this.src='images/cerrars3.png';" class="cerrar" /></a>
+<img src="images/alert.png" title="Atencion" style="position:absolute; top:57; left:33px;" />
+<div style="left:12px; top:7px; width:380px; position:absolute; text-align:left;">&#161;Atenci&oacute;n! Su launcher est&aacute; desactualizado.</div>
+<div style="left:82px; top:54px; width:380px; position:absolute; text-align:left;"><u><i><b style="color:#ff0000;">&#161;Atenci&oacute;n!</b></i></u> Su launcher est&aacute; desactualizado. <br>Tu tienes la versi&oacute;n <script languaje="text/javascript">ver1();</script>, mientras que la &uacute;ltima vers&oacute;n es la <script languaje="text/javascript">ver();</script>. Por favor, descagate la ultima version haciendo clic en <b>"Aceptar"</b>, sal de aqu&iacute; haciendo clic en <b>"Cancelar"</b>, o por el contrario si no quieres recordar m&aacute;s esto haz clic en <b>"No recordar m&aacute;s"</b> (esta opci&oacute;n puede ser deshecha borrando el archivo <b>"recovery.txt"</b> de la carpeta de tu Launcher) Haz clic <b>aqu&iacute;</b> si deseas abrirla.<br>Un saludo.
+</div>
+<div style="position:absolute; bottom:9; left:8; width:467; height:42; background:#f0f0f0; border-top: 1px solid #dfdfdf;"><span class="win7 win7green" style="position:absolute; bottom:6px; right:270px;" onclick="javascript:salir()"><a href="#" onclick="upt()">Aceptar</a></span><span class="win7 win7red" style="position:absolute; bottom:6px; right:162px;" onclick="javascript:salir()"><a href="#"  onclick="ejecutar()">Cancelar</a></span><span class="win7 win7yellow" style="position:absolute; bottom:6px; right:12px;" onclick="javascript:salir()"><a href="#" onclick="crear()">No recordar m&aacute;s</a></span></div>
+</center>
+</body>
+</html>

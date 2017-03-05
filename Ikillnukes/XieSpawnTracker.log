@@ -1,0 +1,14 @@
+id	meta	name	x	y	z
+4010	2	tile.shrub	188	66	-210
+4010	2	tile.shrub	169	66	-212
+4007	0	tile.saltDeposit	166	62	-128
+4007	0	tile.saltDeposit	160	62	-120
+4007	0	tile.saltDeposit	160	62	-119
+4007	0	tile.saltDeposit	159	62	-118
+4007	0	tile.saltDeposit	161	62	-120
+4007	0	tile.saltDeposit	131	62	15
+4007	0	tile.saltDeposit	135	62	15
+4007	0	tile.saltDeposit	136	62	14
+4007	0	tile.saltDeposit	134	62	15
+4007	0	tile.saltDeposit	135	62	14
+4000	3	tile.fruitLeaves	138	64	-250
